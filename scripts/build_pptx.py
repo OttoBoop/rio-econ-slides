@@ -127,10 +127,14 @@ def build_title(slide_data):
     # left blue accent bar
     add_rect(sl, 0, 0, Inches(0.18), SLIDE_H, BLUE)
 
-    # SMDEIS logo image (top-right)
-    logo_path = ASSETS / "logos" / "smdeis_header.jpeg"
-    if logo_path.exists():
-        sl.shapes.add_picture(str(logo_path), Inches(9.5), Inches(0.25), Inches(3.6), Inches(0.9))
+    # top-right branding badge (text only — avoids white-bg JPEG on dark slide)
+    add_rect(sl, Inches(9.3), Inches(0.18), Inches(3.85), Inches(0.78), BLUE)
+    add_textbox(sl, Inches(9.35), Inches(0.22), Inches(3.75), Inches(0.36),
+                "PREFEITURA RIO", size=14, bold=True, color=WHITE,
+                align=PP_ALIGN.CENTER)
+    add_textbox(sl, Inches(9.35), Inches(0.57), Inches(3.75), Inches(0.32),
+                "Desenvolvimento Econômico", size=10, color=RGBColor(0xCC, 0xEE, 0xFF),
+                align=PP_ALIGN.CENTER)
 
     # main title
     add_textbox(sl, Inches(0.5), Inches(1.4), Inches(9), Inches(2.2),
@@ -483,26 +487,22 @@ def build_bio_slide(slide_data):
     add_rect(sl, 0, 0, SLIDE_W, SLIDE_H, NAVY)
     add_rect(sl, 0, 0, Inches(0.10), SLIDE_H, BLUE)
 
-    # photo on left
+    # photo on left — tall portrait, centred vertically
     photo_path = ASSETS / "photos" / slide_data["photo"]
     if photo_path.exists():
-        sl.shapes.add_picture(str(photo_path), Inches(0.5), Inches(0.9), Inches(3.8), Inches(5.0))
+        sl.shapes.add_picture(str(photo_path), Inches(0.4), Inches(0.7), Inches(3.9), Inches(5.8))
 
-    # name + title
-    add_textbox(sl, Inches(4.8), Inches(1.0), Inches(8.2), Inches(0.9),
+    # name + title on right
+    add_textbox(sl, Inches(4.8), Inches(1.2), Inches(8.2), Inches(0.9),
                 slide_data["name"], size=36, bold=True, color=WHITE)
-    add_textbox(sl, Inches(4.8), Inches(1.95), Inches(8.2), Inches(0.5),
+    add_textbox(sl, Inches(4.8), Inches(2.15), Inches(8.2), Inches(0.5),
                 slide_data["title"], size=18, color=BLUE)
 
-    accent_line(sl, Inches(2.6), BLUE)
+    # accent line only on RIGHT side — does not cross the photo column
+    add_rect(sl, Inches(4.8), Inches(2.75), Inches(8.3), Inches(0.04), BLUE)
 
-    add_textbox(sl, Inches(4.8), Inches(2.75), Inches(8.2), Inches(3.5),
+    add_textbox(sl, Inches(4.8), Inches(2.9), Inches(8.2), Inches(3.6),
                 slide_data["bio"], size=15, color=RGBColor(0xCC, 0xDD, 0xFF))
-
-    # SMDEIS logo bottom-left area
-    logo_path = ASSETS / "logos" / "smdeis_header.jpeg"
-    if logo_path.exists():
-        sl.shapes.add_picture(str(logo_path), Inches(0.5), Inches(6.2), Inches(3.5), Inches(0.85))
 
     logo_bar(sl)
 
@@ -541,11 +541,14 @@ def build_multi_axis(slide_data):
         add_rect(sl, cx, start_t + Inches(0.52), col_inner_w,
                  Inches(0.025), BLUE)
 
-        # programs list
+        # programs list — dynamic spacing to fill available height
+        programs = ax.get("programs", [])
+        available_h = Inches(5.8) - (start_t + Inches(0.62))
+        step = min(Inches(0.95), available_h / max(len(programs), 1))
         prog_t = start_t + Inches(0.62)
-        for prog in ax.get("programs", []):
+        for prog in programs:
             txb = sl.shapes.add_textbox(cx + Inches(0.1), prog_t,
-                                        col_inner_w - Inches(0.1), Inches(0.8))
+                                        col_inner_w - Inches(0.1), step - Inches(0.06))
             tf = txb.text_frame
             tf.word_wrap = True
             p = tf.paragraphs[0]
@@ -554,7 +557,7 @@ def build_multi_axis(slide_data):
             run.font.size = Pt(11)
             run.font.color.rgb = DARK_TXT
             run.font.name = "Calibri"
-            prog_t += Inches(0.9)
+            prog_t += step
 
         # vertical divider between columns
         if i < n - 1:
