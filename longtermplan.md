@@ -10,26 +10,26 @@ Presenter: Otávio Bopp, Economist at SMDEIS – Secretaria Municipal de Desenvo
 
 ---
 
-## The 12 Axes
+## The 12 Axes (confirmed by Otávio, 2026-06-02)
 
-These were inferred from the paper and WhatsApp notes. **Correct any that are wrong before finalizing.**
+These are strategic orientations / guiding principles — NOT program categories. Programs appear as proof inside each axis.
 
 | # | Axis | Status in paper |
 |---|------|-----------------|
-| 01 | Innovation & Technology Ecosystem | In paper |
-| 02 | Green Economy & Sustainability | In paper |
-| 03 | Regulatory Simplification & Economic Freedom | In paper |
-| 04 | Financial Sector & AI (BASE, Rio AI City) | In paper |
-| 05 | Tourism & Creative Economy | In paper |
-| 06 | City Center Revitalization (Reviver Centro) | In paper |
-| 07 | Workforce Development & Human Capital | In paper |
-| 08 | Inclusive Growth & Reducing Inequalities | In paper |
-| 09 | Entrepreneurship & SME Support | In paper |
-| 10 | Public Mobility & Urban Planning | In paper |
-| 11 | Infrastructure & Logistics | In paper |
-| 12 | Public Security — Força Municipal / CompStat Rio | **OUTSIDE paper** |
+| 01 | Driven by empirical data | In paper |
+| 02 | Focused on the economy as a whole | In paper |
+| 03 | Lowering inequalities | In paper |
+| 04 | Creation of human capital | In paper |
+| 05 | Reducing bureaucracy | In paper |
+| 06 | Supporting innovation | In paper |
+| 07 | Green economy | In paper |
+| 08 | Revitalizing different parts of the city (downtown, Porto, new developments) | In paper |
+| 09 | Rethinking urban routes (LRTs, BRTs, cycleways, motorcycleways, roundabouts, airport) | In paper |
+| 10 | Cultural and entrepreneurial events | In paper |
+| 11 | Recentering Rio as an economic center of Brazil | In paper |
+| 12 | Rethinking public security | **OUTSIDE paper** — Otávio's addition from work with Flávio Valle |
 
-Axis 12 is handled on a dedicated slide after the explicit break ("Beyond the Paper").
+Axis 12 is on a dedicated slide after the amber break slide ("Beyond the Paper").
 
 ---
 

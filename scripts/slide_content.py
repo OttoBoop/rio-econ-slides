@@ -1,6 +1,10 @@
 """
 All slide text/data as structured dicts.
 Edit this file to change content without touching layout code in build_pptx.py.
+
+The 12 axes are confirmed by Otávio (from whatsapp info.txt, updated 2026-06-02).
+They are strategic orientations/principles, not program categories.
+Programs appear inside each axis as empirical proof.
 """
 
 SLIDES = [
@@ -22,12 +26,12 @@ SLIDES = [
         "title": "The Challenge",
         "bullets": [
             "Brazil's 2015–2016 recession: worst in a century — GDP fell ~7%",
-            "COVID-19 (2020): additional shock to employment and urban activity",
+            "COVID-19 (2020): another shock to employment and urban activity",
             "Structural constraint: most fiscal levers sit at federal & state level — municipalities must be creative",
             "Adversarial state government: limited coordination on security, transport, regulation",
-            "Starting point: unemployment at 15.9% · economy contracting · labor market scarred",
+            "Starting point (2020): unemployment at 15.9% · economy contracting · labor market scarred",
         ],
-        "footer_note": "Despite these constraints, Rio's city government chose to act — across 12 axes of inclusive economic development.",
+        "footer_note": "Despite these constraints, Rio's city government designed a structured, data-driven response across 12 strategic axes.",
     },
 
     # ── 3. THE RESULTS ───────────────────────────────────────────────────────
@@ -51,7 +55,7 @@ SLIDES = [
         "title": "Rio Recovered Faster Than Brazil",
         "subtitle": "Economic Activity Index — Rio de Janeiro vs. Brazil (Base: 1Q2003 = 100)",
         "graph": "P06_atividade_economica_br_rj.png",
-        "callout": "From 2022 onward: RJ growth rate consistently above Brazil's — first time since the 1990s.",
+        "callout": "From 2022 onward: RJ growth consistently above Brazil — first time since the 1990s.",
         "source": "Source: IBC-Br (BCB) · IBCR-RJ (BCB SGS 25397) · Federal Reserve FRED",
     },
 
@@ -71,193 +75,203 @@ SLIDES = [
         "id": "axes_overview",
         "type": "axes_grid",
         "title": "The Strategy: 12 Axes of Inclusive Growth",
-        "intro": "Rio's recovery was deliberate — structured around 12 interlocking policy axes, helping firms of every size and sector.",
+        "intro": "Rio's recovery was structured around 12 interconnected strategic orientations — guiding all programs across every sector and neighborhood.",
         "axes": [
-            {"num": "01", "label": "Innovation &\nTechnology"},
-            {"num": "02", "label": "Green Economy\n& Sustainability"},
-            {"num": "03", "label": "Regulatory\nSimplification"},
-            {"num": "04", "label": "Financial Sector\n& AI"},
-            {"num": "05", "label": "Tourism &\nCreative Economy"},
-            {"num": "06", "label": "City Center\nRevitalization"},
-            {"num": "07", "label": "Workforce &\nHuman Capital"},
-            {"num": "08", "label": "Inclusive Growth\n& Inequality"},
-            {"num": "09", "label": "Entrepreneurship\n& SMEs"},
-            {"num": "10", "label": "Public Mobility\n& Urban Planning"},
-            {"num": "11", "label": "Infrastructure\n& Logistics"},
-            {"num": "12", "label": "Public Security\n(Força Municipal)"},
+            {"num": "01", "label": "Driven by\nempirical data"},
+            {"num": "02", "label": "Economy\nas a whole"},
+            {"num": "03", "label": "Lowering\ninequalities"},
+            {"num": "04", "label": "Creating\nhuman capital"},
+            {"num": "05", "label": "Reducing\nbureaucracy"},
+            {"num": "06", "label": "Supporting\ninnovation"},
+            {"num": "07", "label": "Green\neconomy"},
+            {"num": "08", "label": "City\nrevitalization"},
+            {"num": "09", "label": "Urban\nroutes"},
+            {"num": "10", "label": "Culture &\nevents"},
+            {"num": "11", "label": "Rio as\neconomic center"},
+            {"num": "12", "label": "Rethinking\npublic security"},
         ],
-        "note": "Axis 12 is addressed separately — it is not covered in the academic paper.",
+        "note": "Axis 12 is addressed separately — it goes beyond the academic paper.",
     },
 
-    # ── 7. AXIS: INNOVATION & TECH ───────────────────────────────────────────
+    # ── 7. AXES 1–3: DATA / WHOLE ECONOMY / INEQUALITIES ─────────────────────
     {
-        "id": "axis_innovation",
-        "type": "axis_detail",
-        "axis_num": "01",
-        "axis_label": "Innovation & Technology",
-        "title": "Building an Innovation Ecosystem",
-        "items": [
+        "id": "axes_1_3",
+        "type": "multi_axis",
+        "title": "Axes 1–3: Foundation of the Approach",
+        "axes": [
             {
-                "program": "Porto Maravalley / IMPA Tech",
-                "detail": "Transform the port region into a global innovation hub · 700 students over 10 years · R$ 220M payroll potential",
+                "num": "01",
+                "label": "Driven by empirical data",
+                "programs": [
+                    "IAE-Rio (Economic Activity Index): municipal real-time indicator developed to track recovery independently of federal data",
+                    "All policies evaluated against measurable targets — employment, formalization, income, sector output",
+                ],
             },
             {
-                "program": "Web Summit Rio",
-                "detail": "One of the world's largest tech conferences relocated to Rio · 1M audience across 8 editions · R$ 1.8B economic impact",
+                "num": "02",
+                "label": "Economy as a whole",
+                "programs": [
+                    "Programs targeted all firm sizes (micro → large) and all sectors (services, industry, tourism, tech, finance, logistics)",
+                    "No sector left behind: emergency support in 2020 + long-term structural bets in 2021–2024",
+                ],
             },
             {
-                "program": "Programadores Cariocas",
-                "detail": "750 young people trained in tech (70% Black, 40% women) · ~50% job insertion rate",
-            },
-            {
-                "program": "ISS Tech",
-                "detail": "Tax incentive for tech firms · R$ 62.7M in annual payroll attracted",
-            },
-            {
-                "program": "Sandbox.Rio",
-                "detail": "Experimental regulatory sandbox for tech startups — test innovations without standard licensing barriers",
-            },
-        ],
-    },
-
-    # ── 8. AXIS: FINANCIAL SECTOR & AI ───────────────────────────────────────
-    {
-        "id": "axis_finance",
-        "type": "axis_detail",
-        "axis_num": "04",
-        "axis_label": "Financial Sector & AI",
-        "title": "Repositioning Rio as Brazil's Financial Hub",
-        "items": [
-            {
-                "program": "BASE / ATG — New Stock Exchange",
-                "detail": "Municipal Law 8,467/2024: new derivatives & commodities exchange in Rio · institutional repositioning of the city as a financial center",
-            },
-            {
-                "program": "Rio AI City",
-                "detail": "Ecosystem for AI, financial technology, and data centers · target: 1 GW installed data center capacity by 2028",
-            },
-            {
-                "program": "Partnerships: CVM · BCB · ANBIMA",
-                "detail": "Formal institutional partnerships with Brazil's capital markets regulator, central bank, and asset management association",
-            },
-        ],
-        "callout": "Rio is Brazil's historic financial capital — we are reclaiming that position with modern infrastructure.",
-    },
-
-    # ── 9. AXIS: TOURISM & CREATIVE ECONOMY ──────────────────────────────────
-    {
-        "id": "axis_tourism",
-        "type": "axis_detail",
-        "axis_num": "05",
-        "axis_label": "Tourism & Creative Economy",
-        "title": "Making Rio a Cultural & Tourism Powerhouse",
-        "items": [
-            {
-                "program": "Tourism growth target",
-                "detail": "+15% national and international tourists by 2028",
-            },
-            {
-                "program": "Mega-events strategy",
-                "detail": "8 events of 50,000+ participants · Carioca Arts Week (600,000 audience target by 2028)",
-            },
-            {
-                "program": "Galeão International Airport",
-                "detail": "+10% annual passenger growth · R$ 50.6B GDP impact over 10 years · 684,000+ jobs linked",
-            },
-            {
-                "program": "Film industry",
-                "detail": "+30% increase in authorized filming days for major international productions",
-            },
-            {
-                "program": "Reviver Rua da Carioca / Rua da Cerveja",
-                "detail": "Gastronomic & cultural hub in historic center · 500 jobs · R$ 222M economic impact (4 years)",
+                "num": "03",
+                "label": "Lowering inequalities",
+                "programs": [
+                    "Auxílio Empresa Carioca: 5,000+ micro/small firms supported · 18,000 jobs preserved during COVID",
+                    "Programadores Cariocas: 750 youth trained (70% Black, 40% women) · ~50% job insertion",
+                    "Hub Favela Empreendedora (2025–2028): support and training specifically for favela entrepreneurs",
+                ],
             },
         ],
     },
 
-    # ── 10. AXIS: GREEN ECONOMY ───────────────────────────────────────────────
+    # ── 8. AXES 4–5: HUMAN CAPITAL / BUREAUCRACY ─────────────────────────────
     {
-        "id": "axis_green",
-        "type": "axis_detail",
-        "axis_num": "02",
-        "axis_label": "Green Economy & Sustainability",
-        "title": "Green Growth as Competitive Advantage",
-        "items": [
+        "id": "axes_4_5",
+        "type": "multi_axis",
+        "title": "Axes 4–5: People and Process",
+        "axes": [
             {
-                "program": "ISS Neutro (Neutral ISS)",
-                "detail": "Tax credit for firms that offset their carbon footprint · 250,000 tCO₂eq in mitigation projects · R$ 5.5M in tax credit value",
+                "num": "04",
+                "label": "Creation of human capital",
+                "programs": [
+                    "Programadores Cariocas: tech training for 750 young people from vulnerable communities",
+                    "Digital training platform (2025–2028): professional training, employment and income management",
+                    "15,000 people with disabilities (PWDs) trained and placed by 2028",
+                    "Biblioteca do Saber (Library of Knowledge): network expansion by 2026",
+                ],
             },
             {
-                "program": "Voluntary Carbon Credit Platform (B3 / ACX)",
-                "detail": "Rio as the operational hub for Brazil's emerging voluntary carbon market",
-            },
-            {
-                "program": "Green infrastructure targets (2025–2028)",
-                "detail": "Integrated sustainable urban development — green public spaces, sustainable transport corridors",
+                "num": "05",
+                "label": "Reducing bureaucracy",
+                "programs": [
+                    "Lei da Liberdade Econômica: estimated R$ 3.8K GDP per capita impact · 130,000 potential new jobs",
+                    "LICIN — digital business licensing: analysis time cut from ~9 months to ~30 days",
+                    "100% digital processes: all new business registrations fully digital since January 2022",
+                    "Sandbox.Rio: experimental regulatory environment for tech startups",
+                ],
             },
         ],
-        "callout": "Rio's green economy agenda aligns with European ESG standards — a natural partner for German capital.",
     },
 
-    # ── 11. AXIS: REGULATORY SIMPLIFICATION ──────────────────────────────────
+    # ── 9. AXES 6–7: INNOVATION / GREEN ECONOMY ──────────────────────────────
     {
-        "id": "axis_regulatory",
-        "type": "axis_detail",
-        "axis_num": "03",
-        "axis_label": "Regulatory Simplification & Economic Freedom",
-        "title": "Cutting Red Tape — Dramatically",
-        "items": [
-            {
-                "program": "Lei da Liberdade Econômica",
-                "detail": "Economic Freedom Law: estimated R$ 3.8K GDP per capita impact · potential for 130,000 new jobs",
-            },
-            {
-                "program": "LICIN — Digital Business Licensing",
-                "detail": "License analysis time cut from ~9 months to ~30 days",
-            },
-            {
-                "program": "100% Digital Processes",
-                "detail": "All new business registrations fully digital since January 2022 — zero physical paperwork",
-            },
-        ],
-        "callout": "Ease of doing business improved dramatically — and this directly benefits foreign investors.",
-    },
-
-    # ── 12. REMAINING AXES (QUICK GRID) ──────────────────────────────────────
-    {
-        "id": "axes_remaining",
-        "type": "remaining_axes",
-        "title": "The Full Picture: All 12 Axes",
-        "remaining": [
+        "id": "axes_6_7",
+        "type": "multi_axis",
+        "title": "Axes 6–7: Innovation and Green Economy",
+        "axes": [
             {
                 "num": "06",
-                "label": "City Center Revitalization",
-                "detail": "Reviver Centro: new residents, reoccupied buildings, integrated urban requalification. Reviver Cultural: 43 approved cultural projects.",
+                "label": "Supporting innovation",
+                "programs": [
+                    "Porto Maravalley / IMPA Tech: port region → global innovation hub · 700 students over 10 years · R$ 220M payroll potential",
+                    "Web Summit Rio: 1M audience across 8 editions · R$ 1.8B economic impact",
+                    "ISS Tech: tax incentive attracting R$ 62.7M in annual tech payroll",
+                    "1 GW operational data center capacity target by 2028 — Rio AI City ecosystem",
+                ],
             },
             {
                 "num": "07",
-                "label": "Workforce & Human Capital",
-                "detail": "Digital training platform · 15,000 people with disabilities trained · Hub Favela Empreendedora · Biblioteca do Saber.",
+                "label": "Green economy",
+                "programs": [
+                    "ISS Neutro (Neutral ISS): voluntary carbon offset · 250,000 tCO₂eq in mitigation projects · R$ 5.5M in tax credits",
+                    "B3 / ACX Carbon Credit Platform: Rio as operational hub for Brazil's voluntary carbon market",
+                    "Green infrastructure integration in 2025–2028 Strategic Plan",
+                ],
+            },
+        ],
+    },
+
+    # ── 10. AXIS 8: CITY REVITALIZATION ──────────────────────────────────────
+    {
+        "id": "axis_8",
+        "type": "axis_detail",
+        "axis_num": "08",
+        "axis_label": "Revitalizing Different Parts of the City",
+        "title": "From Downtown to Porto: Remaking Rio's Urban Fabric",
+        "items": [
+            {
+                "program": "Reviver Centro",
+                "detail": "Attract residents back to the city center · reoccupy vacant properties · integrated urban requalification of the historic downtown",
             },
             {
-                "num": "08",
-                "label": "Inclusive Growth",
-                "detail": "Emergency COVID measures (Auxílio Empresa Carioca, Crédito Carioca) · 5,000+ micro enterprises supported · 18,000 jobs preserved.",
+                "program": "Reviver Cultural",
+                "detail": "43 contracts approved for cultural projects in the revitalized center",
             },
             {
-                "num": "09",
-                "label": "Entrepreneurship & SMEs",
-                "detail": "Crédito Carioca: R$ 5M in SME credit · Santa Cruz Industrial District infrastructure improvement.",
+                "program": "Rua da Carioca / Rua da Cerveja",
+                "detail": "Gastronomic, cultural, and tourist hub in historic center · 500 jobs · R$ 41.8M payroll · R$ 222M economic impact (4 years)",
             },
+            {
+                "program": "Porto Maravalley (port region)",
+                "detail": "Transform the abandoned port zone into a global innovation and tech hub — anchored by IMPA Tech",
+            },
+            {
+                "program": "Santa Cruz Industrial District",
+                "detail": "Infrastructure improvements in Rio's largest industrial hub — new developments in the west zone",
+            },
+        ],
+    },
+
+    # ── 11. AXIS 9: URBAN ROUTES ─────────────────────────────────────────────
+    {
+        "id": "axis_9",
+        "type": "axis_detail",
+        "axis_num": "09",
+        "axis_label": "Rethinking Urban Routes",
+        "title": "Mobility as Economic Infrastructure",
+        "items": [
+            {
+                "program": "LRT, BRT & Intermodal Stations",
+                "detail": "Light rail, bus rapid transit, and intermodal hubs connecting neighborhoods, reducing commute time and boosting labor market access",
+            },
+            {
+                "program": "Cycleways & 'Motorcycleways'",
+                "detail": "Expanded dedicated cycling infrastructure; motorcycle lane integration — Rio leads Brazil in urban cycling infrastructure expansion",
+            },
+            {
+                "program": "Overpasses → Underpasses",
+                "detail": "Major urban redesign: converting elevated roads into underground passages, reclaiming public space and improving traffic flow",
+            },
+            {
+                "program": "Roundabouts & traffic redesign",
+                "detail": "Intersection modernization program reducing congestion in key corridors",
+            },
+            {
+                "program": "Galeão International Airport revitalization",
+                "detail": "Strategic coordination with federal and private sectors · R$ 50.6B GDP impact over 10 years · 684,000+ jobs linked · +10% annual passenger growth target (2025–2028)",
+            },
+        ],
+    },
+
+    # ── 12. AXES 10–11: CULTURE & EVENTS / ECONOMIC CENTER ───────────────────
+    {
+        "id": "axes_10_11",
+        "type": "multi_axis",
+        "title": "Axes 10–11: Events and Economic Repositioning",
+        "axes": [
             {
                 "num": "10",
-                "label": "Public Mobility",
-                "detail": "Urban planning integration: land use, transport, housing, and economic development as a single strategy.",
+                "label": "Cultural and entrepreneurial events",
+                "programs": [
+                    "Web Summit Rio: world-class tech conference · 1M audience · R$ 1.8B economic impact · 8 editions",
+                    "Carioca Arts Week: 600,000 audience target by 2028",
+                    "8 mega-events of 50,000+ participants each (2025–2028)",
+                    "+30% increase in authorized filming days for major international productions",
+                    "+15% national and international tourists by 2028",
+                ],
             },
             {
                 "num": "11",
-                "label": "Infrastructure & Logistics",
-                "detail": "Airport sector coordination · Santa Cruz Industrial District · data center capacity expansion.",
+                "label": "Recentering Rio as economic center of Brazil",
+                "programs": [
+                    "BASE / ATG — New Stock Exchange: Law 8,467/2024 · derivatives and commodities exchange repositioning Rio as national financial capital",
+                    "Rio AI City: AI, fintech, and data center ecosystem · formal partnerships with CVM, BCB, ANBIMA",
+                    "1 GW data center capacity by 2028",
+                    "+10% IAE-Rio economic activity target · 35,000 new construction jobs by 2028",
+                ],
             },
         ],
     },
@@ -268,24 +282,24 @@ SLIDES = [
         "type": "break_slide",
         "title": "Beyond the Paper",
         "subtitle": "What We're Also Building",
-        "note": "The following content goes beyond the published academic paper.\nIt reflects ongoing work at SMDEIS and the Gabinete Flávio Valle.",
+        "note": "The following content goes beyond the published academic paper by Lima, Balassiano et al. (2026).\nIt reflects ongoing work at SMDEIS and the Gabinete do Vereador Flávio Valle.",
     },
 
-    # ── 14. PUBLIC SECURITY ───────────────────────────────────────────────────
+    # ── 14. AXIS 12: PUBLIC SECURITY ─────────────────────────────────────────
     {
         "id": "security",
         "type": "axis_detail",
         "axis_num": "12",
-        "axis_label": "Public Security — Força Municipal",
-        "title": "CompStat Rio: Data-Driven Safety",
+        "axis_label": "Rethinking Public Security",
+        "title": "CompStat Rio: Data-Driven Urban Safety",
         "items": [
             {
                 "program": "Força de Segurança Municipal",
-                "detail": "Municipal security force launched in 2025 — explicitly modeled on New York's CompStat revolution of the 1990s",
+                "detail": "Municipal security force launched in 2025 — explicitly modeled on New York's CompStat revolution of the 1990s, which halved homicides in a decade",
             },
             {
                 "program": "Weekly accountability meetings",
-                "detail": "Every Tuesday: precinct commanders confronted with real-time crime maps · executive presence required · no 'Compstat Lite'",
+                "detail": "Every Tuesday: precinct commanders confronted with real-time crime maps · executive presence required · genuine data confrontation, not 'Compstat Lite'",
             },
             {
                 "program": "22 Priority Areas",
@@ -293,10 +307,10 @@ SLIDES = [
             },
             {
                 "program": "Why it matters for investors",
-                "detail": "Public safety is a prerequisite for tourism, hospitality, and urban commerce investment — we are addressing it with the same empirical rigor as our economic programs.",
+                "detail": "Public safety is a prerequisite for tourism, hospitality, retail, and urban commerce. We are addressing it with the same empirical rigor as our economic programs.",
             },
         ],
-        "disclaimer": "⚠ This axis is not covered in the academic paper by Lima et al. (2026). It represents work in progress at the Gabinete do Vereador Flávio Valle and SMDEIS.",
+        "disclaimer": "⚠ This axis is NOT covered in Lima et al. (2026). It represents Otávio Bopp's work at the Gabinete do Vereador Flávio Valle and SMDEIS.",
     },
 
     # ── 15. FORWARD 2025–2028 ─────────────────────────────────────────────────
@@ -304,15 +318,15 @@ SLIDES = [
         "id": "forward",
         "type": "forward",
         "title": "The Road Ahead: 2025–2028",
-        "subtitle": "Rio Legado e Futuro — Strategic Plan",
+        "subtitle": "Rio Legado e Futuro — Official Strategic Plan",
         "bullets": [
-            "88 goals · 134 projects · 30 strategic initiatives",
+            "88 goals · 134 projects · 30 strategic initiatives — all publicly accountable and monitored quarterly",
             "Economy & Innovation: +10% IAE-Rio activity index · 35,000 new construction jobs by 2028",
-            "Tourism & Culture: +15% tourists · 8 mega-events · 100 new cultural spaces",
+            "Tourism & Culture: +15% tourists · 8 mega-events · 100 new cultural spaces · 600,000 Carioca Arts Week audience",
             "Human Capital: 15,000 PWDs trained · favela entrepreneur hub · knowledge library network",
-            "Strategic: Rio AI City · 1 GW data center capacity · financial sector consolidation",
+            "Strategic: Rio AI City · 1 GW data center capacity · financial sector consolidation (BASE, CVM/BCB/ANBIMA)",
         ],
-        "footer_note": "All 2025–2028 targets are embedded in the official Strategic Plan — publicly accountable and monitored quarterly.",
+        "footer_note": "Source: Prefeitura do Rio — Plano Estratégico 2025–2028 'Rio Legado e Futuro'",
     },
 
     # ── 16. WHY RIO? ──────────────────────────────────────────────────────────
@@ -322,34 +336,28 @@ SLIDES = [
         "title": "Why Rio — For German Investors",
         "points": [
             {
-                "icon": "📈",
                 "label": "Proven Recovery",
-                "detail": "Outpaced Brazil's GDP growth in 2022 & 2023 — first time in 30 years. Unemployment halved.",
+                "detail": "Outpaced Brazil's GDP growth in 2022 & 2023 — first time in 30 years. Unemployment halved. #2 for formal job creation.",
             },
             {
-                "icon": "🏛",
                 "label": "Financial Hub",
-                "detail": "New stock exchange (BASE), CVM/BCB partnerships, AI city — Rio is re-emerging as Brazil's financial capital.",
+                "detail": "New stock exchange (BASE), CVM/BCB/ANBIMA partnerships, AI city — Rio is reclaiming its role as Brazil's financial capital.",
             },
             {
-                "icon": "🌿",
                 "label": "ESG-Ready",
-                "detail": "Voluntary carbon market (B3/ACX), ISS Neutro, green infrastructure — aligned with European investment standards.",
+                "detail": "Voluntary carbon market (B3/ACX), ISS Neutro, green infrastructure — aligned with European ESG investment standards.",
             },
             {
-                "icon": "⚡",
                 "label": "Ease of Business",
-                "detail": "Licensing time cut from 9 months to 30 days. 100% digital processes. Economic Freedom Law.",
+                "detail": "Licensing time: 9 months → 30 days. 100% digital processes. Economic Freedom Law. Sandbox for innovation.",
             },
             {
-                "icon": "🎭",
                 "label": "Cultural Capital",
-                "detail": "Web Summit, Carnaval, film industry, tourism growth — Rio is Brazil's gateway to the world.",
+                "detail": "Web Summit, Carnaval, film industry growth, +15% tourist target — Rio is Brazil's gateway to the world.",
             },
             {
-                "icon": "🔒",
                 "label": "Safety Improving",
-                "detail": "CompStat Rio (Força Municipal): data-driven urban security — neighborhood-level accountability.",
+                "detail": "CompStat Rio (Força Municipal): data-driven, neighborhood-level security accountability — same model that transformed New York.",
             },
         ],
     },
@@ -363,7 +371,7 @@ SLIDES = [
         "bio": (
             "Otávio Bopp is an economist from Fundação Getúlio Vargas. "
             "He has worked as a researcher at IBRE (FGV) and as an advisor "
-            "for municipal councilman Flávio Valle, before working at SMDEIS — "
+            "for municipal councilman Flávio Valle, before joining SMDEIS — "
             "the Secretaria Municipal de Desenvolvimento Econômico, Inovação e Serviços "
             "of the City of Rio de Janeiro.\n\n"
             "Bopp thrives at the intersection of public policy, academic research, "

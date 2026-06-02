@@ -507,6 +507,63 @@ def build_bio_slide(slide_data):
     logo_bar(sl)
 
 
+def build_multi_axis(slide_data):
+    """2 or 3 axes per slide, each with a bulleted program list below."""
+    sl = prs.slides.add_slide(BLANK)
+    add_rect(sl, 0, 0, SLIDE_W, SLIDE_H, LIGHT_BG)
+    add_rect(sl, 0, 0, SLIDE_W, Inches(1.1), NAVY)
+    add_rect(sl, 0, 0, Inches(0.10), SLIDE_H, BLUE)
+
+    add_textbox(sl, Inches(0.3), Inches(0.15), Inches(12.5), Inches(0.75),
+                slide_data["title"], size=24, bold=True, color=WHITE)
+
+    axes = slide_data["axes"]
+    n = len(axes)
+    col_w = (SLIDE_W - Inches(0.6)) / n
+    start_t = Inches(1.15)
+
+    for i, ax in enumerate(axes):
+        cx = Inches(0.3) + i * col_w
+        col_inner_w = col_w - Inches(0.15)
+
+        # axis number badge
+        add_rect(sl, cx, start_t, Inches(0.5), Inches(0.45), BLUE)
+        add_textbox(sl, cx, start_t, Inches(0.5), Inches(0.45),
+                    ax["num"], size=14, bold=True, color=WHITE,
+                    align=PP_ALIGN.CENTER)
+
+        # axis label
+        add_textbox(sl, cx + Inches(0.58), start_t + Inches(0.02),
+                    col_inner_w - Inches(0.58), Inches(0.55),
+                    ax["label"], size=14, bold=True, color=DARK_TXT)
+
+        # divider
+        add_rect(sl, cx, start_t + Inches(0.52), col_inner_w,
+                 Inches(0.025), BLUE)
+
+        # programs list
+        prog_t = start_t + Inches(0.62)
+        for prog in ax.get("programs", []):
+            txb = sl.shapes.add_textbox(cx + Inches(0.1), prog_t,
+                                        col_inner_w - Inches(0.1), Inches(0.8))
+            tf = txb.text_frame
+            tf.word_wrap = True
+            p = tf.paragraphs[0]
+            run = p.add_run()
+            run.text = "▸ " + prog
+            run.font.size = Pt(11)
+            run.font.color.rgb = DARK_TXT
+            run.font.name = "Calibri"
+            prog_t += Inches(0.9)
+
+        # vertical divider between columns
+        if i < n - 1:
+            add_rect(sl, cx + col_w - Inches(0.075), start_t,
+                     Inches(0.015), Inches(5.9), RGBColor(0xCC, 0xDD, 0xEE))
+
+    logo_bar(sl)
+
+
 # ── dispatch ─────────────────────────────────────────────────────────────────
 
 BUILDERS = {
@@ -516,6 +573,7 @@ BUILDERS = {
     "chart_slide":   build_chart_slide,
     "axes_grid":     build_axes_grid,
     "axis_detail":   build_axis_detail,
+    "multi_axis":    build_multi_axis,
     "remaining_axes": build_remaining_axes,
     "break_slide":   build_break_slide,
     "forward":       build_forward,
