@@ -46,6 +46,7 @@ SLIDES = [
             {"value": "#2 Capital", "label": "Formal job creation rank", "detail": "In Brazil, behind only São Paulo"},
         ],
         "source": "Source: PNAD Contínua / IBGE · Caged · IPP-Rio (IAE-Rio indicator)",
+        "highlight": "A city-level response — under federal and state constraints — delivered the highest employed population in Rio's recorded history: 3.4 million people in formal work.",
     },
 
     # ── 4. CHART: RIO vs BRAZIL (P06) ────────────────────────────────────────
@@ -55,7 +56,7 @@ SLIDES = [
         "title": "Rio Recovered Faster Than Brazil",
         "subtitle": "Economic Activity Index — Rio de Janeiro vs. Brazil (Base: 1Q2003 = 100)",
         "graph": "P06_atividade_economica_br_rj.png",
-        "callout": "From 2022 onward: RJ growth consistently above Brazil — first time since the 1990s.",
+        "callout": "From 2022 onward: RJ growth consistently above Brazil — first time since the 1990s.\n\nBR index: 166 · RJ index: 142 (2024). The gap is closing after three decades of underperformance.",
         "source": "Source: IBC-Br (BCB) · IBCR-RJ (BCB SGS 25397) · Federal Reserve FRED",
     },
 
@@ -66,7 +67,7 @@ SLIDES = [
         "title": "A Labor Market Transformed",
         "subtitle": "Unemployment Rate — Rio de Janeiro (%) · PNAD Contínua / IBGE",
         "graph": "C11_desemprego.png",
-        "callout": "Unemployment halved in 4 years. ~300,000 residents left precarious labor conditions (2021–2024).",
+        "callout": "Unemployment halved in 4 years: 15.9% → 8.0%\n\n~300,000 residents moved out of precarious labor. Rio now at its lowest unemployment rate on record.",
         "source": "Source: PNAD Contínua / IBGE · Tabela SIDRA 4093 · IPP-Rio",
     },
 
@@ -105,6 +106,7 @@ SLIDES = [
                 "programs": [
                     "IAE-Rio (Economic Activity Index): municipal real-time indicator developed to track recovery independently of federal data",
                     "All policies evaluated against measurable targets — employment, formalization, income, sector output",
+                    "7 Rio-specific economic indicators built in-house and published quarterly — enabling faster, evidence-based decisions without waiting for state or federal releases",
                 ],
             },
             {
@@ -113,6 +115,7 @@ SLIDES = [
                 "programs": [
                     "Programs targeted all firm sizes (micro → large) and all sectors (services, industry, tourism, tech, finance, logistics)",
                     "No sector left behind: emergency support in 2020 + long-term structural bets in 2021–2024",
+                    "Coverage extended to all 33 districts — geographic equity built into program design, not only downtown and South Zone",
                 ],
             },
             {
@@ -179,6 +182,7 @@ SLIDES = [
                     "ISS Neutro (Neutral ISS): voluntary carbon offset · 250,000 tCO₂eq in mitigation projects · R$ 5.5M in tax credits",
                     "B3 / ACX Carbon Credit Platform: Rio as operational hub for Brazil's voluntary carbon market",
                     "Green infrastructure integration in 2025–2028 Strategic Plan",
+                    "Zero-carbon events framework: major conferences and mega-events required to offset emissions — Rio as model for sustainable urban hosting",
                 ],
             },
         ],
@@ -325,6 +329,7 @@ SLIDES = [
             "Tourism & Culture: +15% tourists · 8 mega-events · 100 new cultural spaces · 600,000 Carioca Arts Week audience",
             "Human Capital: 15,000 PWDs trained · favela entrepreneur hub · knowledge library network",
             "Strategic: Rio AI City · 1 GW data center capacity · financial sector consolidation (BASE, CVM/BCB/ANBIMA)",
+            "Infrastructure: Galeão Airport revitalization · R$ 50.6B GDP impact over 10 years · 684,000+ jobs linked · intermodal integration with Linha 4 metro",
         ],
         "footer_note": "Source: Prefeitura do Rio — Plano Estratégico 2025–2028 'Rio Legado e Futuro'",
     },

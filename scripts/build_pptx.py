@@ -225,6 +225,13 @@ def build_stats(slide_data):
             add_rect(sl, cx + col_w - Inches(0.02), Inches(1.4),
                      Inches(0.02), Inches(3.0), RGBColor(0x33, 0x55, 0x88))
 
+    if slide_data.get("highlight"):
+        add_rect(sl, Inches(0.3), Inches(4.75), Inches(12.7), Inches(0.04), BLUE)
+        add_textbox(sl, Inches(1.0), Inches(4.88), Inches(11.3), Inches(1.3),
+                    slide_data["highlight"], size=16,
+                    color=RGBColor(0xAA, 0xCC, 0xFF),
+                    align=PP_ALIGN.CENTER, italic=True)
+
     add_textbox(sl, Inches(0.3), Inches(6.6), Inches(12.5), Inches(0.4),
                 slide_data.get("source", ""), size=10,
                 color=RGBColor(0x77, 0xAA, 0xDD), italic=True)
@@ -541,10 +548,10 @@ def build_multi_axis(slide_data):
         add_rect(sl, cx, start_t + Inches(0.52), col_inner_w,
                  Inches(0.025), BLUE)
 
-        # programs list — dynamic spacing to fill available height
+        # programs list — fill available height evenly
         programs = ax.get("programs", [])
         available_h = Inches(5.8) - (start_t + Inches(0.62))
-        step = min(Inches(0.95), available_h / max(len(programs), 1))
+        step = available_h / max(len(programs), 1)
         prog_t = start_t + Inches(0.62)
         for prog in programs:
             txb = sl.shapes.add_textbox(cx + Inches(0.1), prog_t,
